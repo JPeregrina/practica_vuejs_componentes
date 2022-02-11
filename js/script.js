@@ -38,15 +38,28 @@ var server_data = {
     }
 };
 
+var editFilm = [];
 
 // TODO: Componente edit-form
 Vue.component('edit-form', {
-
+    template: '#edit-form', 
+    props: ['film', 'index'],
+    methods: {
+        closeForm: function(index) {
+            editFilm.splice(editFilm.indexOf(index), 1);
+        }
+    }
 })
 
 // TODO: Componente item-data
 Vue.component('item-data', {
-
+    template: '#item-data',
+    props: ['film', 'index'],
+    methods: {
+        toggleEditFormVisibility: function(index) {
+            editFilm.push(index);
+        }
+    }
 })
 
 // Aplicación VueJS
@@ -54,7 +67,8 @@ Vue.component('item-data', {
 var app = new Vue({
     el: '#app',
     data: {
-        col: server_data
+        col: server_data,
+        editFilm: this.editFilm
     }
 });
 
