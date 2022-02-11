@@ -42,7 +42,7 @@ var editFilm = [];
 
 // TODO: Componente edit-form
 Vue.component('edit-form', {
-    template: '#edit-form', 
+    template: '#editForm', 
     props: ['film', 'index'],
     methods: {
         closeForm: function(index) {
@@ -53,7 +53,7 @@ Vue.component('edit-form', {
 
 // TODO: Componente item-data
 Vue.component('item-data', {
-    template: '#item-data',
+    template: '#itemData',
     props: ['film', 'index'],
     methods: {
         toggleEditFormVisibility: function(index) {
@@ -68,7 +68,7 @@ var app = new Vue({
     el: '#app',
     data: {
         col: server_data,
-        editFilm: this.editFilm
+        editFilm: editFilm
     }
 });
 
